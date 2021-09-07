@@ -1,9 +1,8 @@
 import ReactDOM from "react-dom";
 import React, { useState, useEffect } from "react";
 
-// here , empty dependency array is passed .
-// useEffect will be called only once after initial rendering
-// useEffect will be never called now ,only the component will be re-rendered
+// here , no dependency array is passed
+// useEffect will be called  after every render (or re-render)
 
 const Show = (props) => {
   useEffect(() => {
@@ -12,7 +11,7 @@ const Show = (props) => {
     return () => {
       console.log("clean up called on " + props.name);
     };
-  }, []);
+  });
 
   return (
     <div>
